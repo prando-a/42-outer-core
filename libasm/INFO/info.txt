@@ -1,0 +1,35 @@
+Registros de parámetros:
+
+    1º argumento → RDI
+    2º argumento → RSI
+    3º argumento → RDX
+    4º argumento → RCX
+    5º argumento → R8
+    6º argumento → R9
+    Del 7º en adelante → se colocan en la pila (stack).
+
+
+Asignar un valor:
+
+<operacion> <reg. destino> <valor (crudo o de reg. origen)>
+
+mov rax, -1 -> asignar a rax el valor -1
+mov rdx, rax -> asignar a rdx el valor de rax
+sub rdx, rax -> restar a rdx el valor de rax
+xor rax, rax -> realiza la operacion XOR, hacerlo de un valor sobre sí mismo lo iguala a 0
+
+
+
+Leer un valor en una cadena:
+Suponiendo que rsi es un string...
+
+- mov rax, rsi -> el valor de rsi es siempre su puntero,
+                    la dirección de memoria (se lee en el formato 0x0000000)
+
+- mov rax, BYTE [rsi] -> la operacion BYTE [] lee el contenido
+                        de la dirección de memoria 0x0000000,
+                        es decir, el caracter.
+
+De esta manera, incrementar rsi mueve el puntero hacia adelante.
+Modificar rsi mueve el puntero hacia adelante o atrás 
+si se suma o se resta respectivamente.
