@@ -4,22 +4,25 @@ extern ft_strlen
 extern ft_strcpy
 global ft_strdup
 
+; char *ft_strdup(const char *s);
 ft_strdup:
-    call ft_strlen
+    push    rdi
+    call ft_strlen 
     inc rax
 
-    mov rsi, rdi
-    mov rdi, rax
-    call malloc
+
+    mov rdi, rax ; size for malloc
+    call malloc wrt ..plt 
+
     cmp rax, 0
-    je .error
+    je .end
 
-    mov rdi, rax
+    mov  rdi, rax
+    mov  rsi, [rsp]
     call ft_strcpy
-    ret
 
 
-
-.error
+.end:
+    add rsp, 8
     ret
 

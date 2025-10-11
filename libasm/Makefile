@@ -6,7 +6,7 @@
 #    By: prando-a <prando-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/27 13:24:37 by prando-a          #+#    #+#              #
-#    Updated: 2025/10/08 19:55:55 by prando-a         ###   ########.fr        #
+#    Updated: 2025/10/11 12:03:10 by prando-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ bonus: $(OBJ) $(BONUS_OBJ)
 # Commented during evaluation
 MAIN = ./INFO/main.c
 test: all
-	gcc -Wall -Wextra -Werror $(MAIN) -L. -lasm -o test
+	gcc $(MAIN) -g -L. -lasm -o test
 
 %.o: %.s
 	nasm $(NASM_FLAGS) $< -o $@

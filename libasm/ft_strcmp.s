@@ -1,7 +1,7 @@
 section .text
 global ft_strcmp
 
-.loop:
+ft_strcmp:
     movzx   eax, byte [rdi]    ; eax = (unsigned char)*s1
     movzx   edx, byte [rsi]    ; edx = (unsigned char)*s2
     cmp     eax, edx
@@ -12,7 +12,7 @@ global ft_strcmp
 
     inc     rdi
     inc     rsi
-    jmp     .loop
+    jmp     ft_strcmp
 
 .dif:
     sub     eax, edx           ; eax = eax - edx

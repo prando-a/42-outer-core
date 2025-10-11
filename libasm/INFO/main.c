@@ -36,6 +36,10 @@ int main(int argc, char **argv)
 
     printf("%s\n", str);
 
+    printf("ft_strcmp(\"abc\", \"abc\") = %d\n", ft_strcmp("abc", "abc"));
+    printf("ft_strcmp(\"abc\", \"abd\") = %d\n", ft_strcmp("abc", "abd"));
+    printf("ft_strcmp(\"abd\", \"abc\") = %d\n", ft_strcmp("abd", "abc"));
+
     return 0;
 }
 
